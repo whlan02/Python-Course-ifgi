@@ -32,8 +32,16 @@ def verbing(s):
 # so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or
 # modify the passed in list.
 def remove_adjacent(nums):
+    if not nums:  #if the list is empty, return an empty list
+        return []
     
-    return 
+    result = [nums[0]]  #initialize the result list, add the first element
+    
+    for i in range(1, len(nums)):
+        if nums[i] != nums[i - 1]:  #only add the current element when it is different from the previous one
+            result.append(nums[i])
+    
+    return result
 
 def main():
     print('donuts')
