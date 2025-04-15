@@ -30,12 +30,14 @@ def donuts(count):
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
+    #check the length of the string
     if len(s) < 3: 
         return s
+    #check if the string ends with 'ing'
     if s[-3:] == 'ing':
-        return s + 'ly'
+        return s + 'ly' #if the string ends with 'ing', add 'ly' to the end
     else:
-        return s + 'ing'
+        return s + 'ing' #if the string does not end with 'ing', add 'ing' to the end
 
 # Remove adjacent
 # Given a list of numbers, return a list where
