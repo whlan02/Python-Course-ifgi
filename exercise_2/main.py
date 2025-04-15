@@ -7,8 +7,14 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
+    if isinstance(count, int) == False:
+        string = "Input must be an Integer"
+    elif count < 10:
+        string = f"Number of donuts: {count}"
+    else: 
+        string = "Number of donuts: many"
+    return string
 
-    return
 # verbing
 # Given a string, if its length is at least 3,
 # add 'ing' to its end.
@@ -35,6 +41,7 @@ def main():
     print(donuts(9))
     print(donuts(10))
     print(donuts('twentyone'))
+    print(donuts(1.2))
     print('verbing')
     print(verbing('hail'))
     print(verbing('swiming'))
@@ -44,5 +51,6 @@ def main():
     print(remove_adjacent([2, 2, 3, 3, 3]))
     print(remove_adjacent([]))
     # Standard boilerplate to call the main() function.
+
 if __name__ == '__main__':
     main()
