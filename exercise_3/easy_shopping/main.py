@@ -1,5 +1,5 @@
-from easy_shopping import calculator
-from easy_shopping import shopping
+import calculator
+import shopping
 
 def main():
     # Create calculator instance
