@@ -1,27 +1,19 @@
 class Calculator:
-    """
-    A simple calculator class that handles basic arithmetic operations
-    with proper error handling.
-    """
-    
+
+    # add two numbers
     def add(self, a, b):
-        """Add two numbers"""
         return a + b
     
+    # subtract b from a
     def subtract(self, a, b):
-        """Subtract b from a"""
         return a - b
     
+    # multiply two numbers
     def multiply(self, a, b):
-        """Multiply two numbers"""
         return a * b
     
+    # divide a by b
     def divide(self, a, b):
-        """
-        Divide a by b
-        Raises:
-            ZeroDivisionError: If b is zero
-        """
-        if b == 0:
+        if b == 0: # check if b is zero
             raise ZeroDivisionError("Cannot divide by zero")
-        return a / b 
+        return a / b # return the result of the division
