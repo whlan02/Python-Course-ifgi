@@ -1,9 +1,9 @@
-from easy_shopping import calculator
-from easy_shopping import shopping
+from easy_shopping import Calculator
+from easy_shopping import ShoppingCart
 
 def main():
     # Create calculator instance
-    calc = calculator.Calculator()
+    calc = Calculator()
     
     # Test case 1: 7+5
     print("7 + 5 =", calc.add(7, 5))
@@ -26,7 +26,7 @@ def main():
 
     # test the shopping cart
     print("")
-    cart = shopping.ShoppingCart()
+    cart = ShoppingCart()
     cart.show_cart()
     cart.total_amount()
     cart.add_item("Banana", 3)

@@ -1,2 +1,2 @@
 from .calculator import Calculator
-from .shopping import Shoppingcard
+from .shopping import ShoppingCart

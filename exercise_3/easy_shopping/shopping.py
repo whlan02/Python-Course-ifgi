@@ -53,23 +53,3 @@ class ShoppingCart:
     # show total amount of items on the cart
     def total_amount(self):
         print(f"Total amount of items on your cart: {sum(self.items.values())}")
-
-
-cart = ShoppingCart()
-cart.show_cart()
-cart.total_amount()
-cart.add_item("Banana", 3)
-cart.add_item("Apple", 2)
-cart.add_item("Tomato", 50)
-cart.add_item("Tomato", 50)
-cart.show_cart()
-cart.total_amount()
-cart.remove_item_quantity("Tomato", 10)
-cart.remove_item_quantity("Tomato", 100)
-cart.remove_item_quantity("Hello", 100)
-cart.show_cart()
-cart.total_amount()
-cart.remove_whole_item("Banana")
-cart.remove_whole_item("Hello")
-cart.show_cart()
-cart.total_amount()
