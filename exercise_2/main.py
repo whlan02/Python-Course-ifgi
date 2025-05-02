@@ -7,12 +7,19 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
+    # check the input type (not an int?)
     if isinstance(count, int) == False:
         string = "Input must be an Integer"
+    # are less than 0 donuts possible? check if donuts are less than 0
+    elif count < 0:
+        string = "These donuts are very negative!?!"
+    # check if count is lower than 10
     elif count < 10:
         string = f"Number of donuts: {count}"
+    # check if count is 10 or more
     else: 
         string = "Number of donuts: many"
+    # return the string for the fitting case above
     return string
 
 # verbing
@@ -23,12 +30,14 @@ def donuts(count):
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
+    #check the length of the string
     if len(s) < 3: 
         return s
+    #check if the string ends with 'ing'
     if s[-3:] == 'ing':
-        return s + 'ly'
+        return s + 'ly' #if the string ends with 'ing', add 'ly' to the end
     else:
-        return s + 'ing'
+        return s + 'ing' #if the string does not end with 'ing', add 'ing' to the end
 
 # Remove adjacent
 # Given a list of numbers, return a list where
@@ -54,6 +63,7 @@ def main():
     print(donuts(10))
     print(donuts('twentyone'))
     print(donuts(1.2))
+    print(donuts(-1))
     print('verbing')
     print(verbing('hail'))
     print(verbing('swiming'))
