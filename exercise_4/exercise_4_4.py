@@ -1,4 +1,4 @@
-from qgis.core import *  
+from qgis.core import QgsProject
 import processing  # Import the processing module for geospatial analysis
 
 # Retrieve the layers from the current project

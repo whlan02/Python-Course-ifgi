@@ -1,3 +1,4 @@
+from qgis.core import QgsProject
 import csv  # Import the CSV module for handling CSV file operations
 
 # Set the layer name for the schools layer
