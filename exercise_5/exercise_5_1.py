@@ -1,5 +1,5 @@
 from qgis.PyQt.QtWidgets import QInputDialog, QMessageBox
-from qgis.core import QgsVectorLayer, QgsFeatureRequest, QgsDistanceArea
+from qgis.core import QgsVectorLayer, QgsFeatureRequest, QgsDistanceArea, QgsProject
 
 # Get the currently loaded layers by name
 city_districts_layer = QgsProject.instance().mapLayersByName("Muenster_City_Districts")[0]
@@ -21,9 +21,12 @@ if bOk:
     district_request = QgsFeatureRequest().setFilterExpression(f'"Name" = \'{selected_district}\'')
     district_feature = next(city_districts_layer.getFeatures(district_request))
     
-    # Find schools within the selected district
-    schools_request = QgsFeatureRequest().setFilterRect(district_feature.geometry().boundingBox())
-    schools_within_district = [feature for feature in schools_layer.getFeatures(schools_request)]
+    # Find schools within the selected district using precise spatial check
+    schools_within_district = []
+    district_geometry = district_feature.geometry()
+    for school in schools_layer.getFeatures():
+        if district_geometry.contains(school.geometry()):
+            schools_within_district.append(school)
     
     # Calculate distances to the centroid of the district
     district_centroid = district_feature.geometry().centroid().asPoint()
