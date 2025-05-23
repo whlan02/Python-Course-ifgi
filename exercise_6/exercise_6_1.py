@@ -16,7 +16,7 @@ while True:
 csv_file_path = "D:/study/UniMuenster/Sose2025/PythonInQgisandArcgis/week6/Data for Session 6/standard_land_value_muenster.csv"
 
 # Create a new in-memory layer
-layer = QgsVectorLayer('Polygon?crs=epsg:4326', 'temp_standard_land_value_muenster', 'memory')
+layer = QgsVectorLayer('Polygon?crs=epsg:25832', 'temp_standard_land_value_muenster', 'memory')
 
 # Check if the layer was successfully created
 if not layer.isValid():
